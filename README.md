@@ -16,6 +16,7 @@ knowledge of interactive 3D computer graphics. Choose any one topic from below:
 1. An interactive learning studio for computer graphics
 2. An interactive game
 3. An interactive graphics program
+
 Deliverable 1: Project Phase I (5%)
 As a team, write a project proposal (max 3 pages single spaced) aligning with your chosen
 theme and outlining the following:
@@ -32,6 +33,7 @@ b. The project proposal document
 c. Name the document CS4361_ProjectProposal_Team# (Example:
 CS4361_ProjectProposal_Team10)
 d. Only one submission per team, due on eLearning by Tuesday 09/26/23.
+
 Deliverable 2: Project Progress (3%)
 In this project assignment, your team will report project progress.
 • Are you meeting your proposed deadlines?
@@ -44,6 +46,7 @@ b. The project progress document
 c. Name the document CS4361_ProjectProgress_Team# (Example:
 CS4361_ProjectProgress_Team10)
 d. Only one submission per team, due on eLearning by Tuesday 10/24/23.
+
 Deliverable 3: Project Phase II
 1. Project Presentations (6%):
 Create a powerpoint presentation and present it during class (seven to ten minute time
