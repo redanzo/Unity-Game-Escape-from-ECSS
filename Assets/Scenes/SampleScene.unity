@@ -164,6 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 148901444}
   - component: {fileID: 148901443}
+  - component: {fileID: 148901445}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -216,6 +217,27 @@ Transform:
   - {fileID: 837773140}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &148901445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148901442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff35551198a3bcc4ba928ec377bf402b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRotSpeed: 0
+  speed: 2
+  orientation: {fileID: 15319820}
+  gravMod: 1
+  groundDrag: 5
+  playerHeight: 0.5
+  theGround:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &685342181
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +250,7 @@ GameObject:
   - component: {fileID: 685342184}
   - component: {fileID: 685342183}
   - component: {fileID: 685342182}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,8 +574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f38784579729d418bf7ee6cce74aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 400
-  sensY: 400
+  sensX: 350
+  sensY: 350
   orientation: {fileID: 15319820}
 --- !u!1 &1156572623
 GameObject:
