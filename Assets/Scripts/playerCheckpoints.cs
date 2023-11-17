@@ -9,11 +9,11 @@ public class playerCheckpoints : MonoBehaviour
     public Transform cp2Transform;
     public Transform cp3Transform;
     public int currentCP;
-    public bool failed;
+    public bool player_failed;
     private Transform playerTransform;
     void Start()
     {
-        failed = false;
+        player_failed = false;
         currentCP = 1;
         playerTransform = GetComponent<Transform>();
     }
@@ -34,21 +34,21 @@ public class playerCheckpoints : MonoBehaviour
     }
 
     private void resetPlayer(){
-        if(failed)
+        if(player_failed)
         {
             switch (currentCP)
             {
                 case 1:
                     playerTransform.transform.position = new Vector3(cp1Transform.position.x, cp1Transform.position.y, cp1Transform.position.z);
-                    failed = false;
+                    player_failed = false;
                     break;
                 case 2:
                     playerTransform.transform.position = new Vector3(cp2Transform.position.x, cp2Transform.position.y, cp2Transform.position.z);
-                    failed = false;
+                    player_failed = false;
                     break;
                 case 3:
                     playerTransform.transform.position = new Vector3(cp3Transform.position.x, cp3Transform.position.y, cp3Transform.position.z);
-                    failed = false;
+                    player_failed = false;
                     break;
             }
         }
