@@ -24,7 +24,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if(hit.collider.CompareTag(interactableTag))
             {
-                UnityEngine.Debug.Log("Interactable");
+                // UnityEngine.Debug.Log("Interactable");
                 
                 if(Input.GetKeyDown(KeyCode.E)){
                     rayCastedObject = hit.collider.gameObject;

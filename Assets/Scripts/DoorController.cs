@@ -18,12 +18,12 @@ public class DoorController : MonoBehaviour
 
     public void PlayAnimation(){
         if(!doorOpen){
-            UnityEngine.Debug.Log("Door opened");
+            // UnityEngine.Debug.Log("Door opened");
 
             doorAnimator.Play("DoorOpen", 0, 0.0f);
         }
         else{
-            UnityEngine.Debug.Log("Door closed");
+            // UnityEngine.Debug.Log("Door closed");
 
             doorAnimator.Play("DoorClose", 0, 0.0f);
         }
