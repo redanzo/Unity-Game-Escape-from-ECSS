@@ -53,15 +53,14 @@ public class PlayerMovement : MonoBehaviour
     private void movementInput(){
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-
-        
     }
 
     private void speedControl(){
-        Vector3 flatVel = new Vector3(playerRB.velocity.x, 0f, playerRB.velocity.z);
+        Vector3 flatVelocity = new Vector3(playerRB.velocity.x, 0f, playerRB.velocity.z);
 
-        if(flatVel.magnitude > speed){
-            Vector3 velLimit = flatVel.normalized * speed;
+        // stop player from continously sliding by limitting velocity
+        if(flatVelocity.magnitude > speed){
+            Vector3 velLimit = flatVelocity.normalized * speed;
             playerRB.velocity = new Vector3(velLimit.x, playerRB.velocity.y, velLimit.z);
         }
     }
