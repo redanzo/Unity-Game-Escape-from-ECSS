@@ -38,10 +38,7 @@ public class PlayerMovement : MonoBehaviour
         speedControl();
 
         // applying drag
-        if(grounded)
-            playerRB.drag = groundDrag;
-        else
-            playerRB.drag = 0;
+        playerRB.drag = groundDrag;
 
     }
 
@@ -68,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     private void playerMovement(){
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        playerRB.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
+        playerRB.AddForce(moveDirection.normalized * speed, ForceMode.VelocityChange);
     }
 
 }

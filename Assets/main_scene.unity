@@ -284,7 +284,6 @@ GameObject:
   - component: {fileID: 148901444}
   - component: {fileID: 148901443}
   - component: {fileID: 148901445}
-  - component: {fileID: 148901446}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -352,24 +351,11 @@ MonoBehaviour:
   speed: 2
   orientation: {fileID: 15319820}
   gravMod: 1
-  groundDrag: 5
-  playerHeight: 0.5
+  groundDrag: 6
+  playerHeight: 0.1
   theGround:
     serializedVersion: 2
     m_Bits: 1024
---- !u!114 &148901446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148901442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419e34752b999a94f9490232b007e87b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 539469778}
 --- !u!1 &539469773
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &539469774
 Transform:
   m_ObjectHideFlags: 0
@@ -1009,8 +995,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f38784579729d418bf7ee6cce74aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 350
-  sensY: 350
+  sensX: 150
+  sensY: 150
   orientation: {fileID: 15319820}
 --- !u!1 &1156572623
 GameObject:
