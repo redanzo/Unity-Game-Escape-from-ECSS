@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class playerCheckpoints : MonoBehaviour
 {
@@ -8,13 +9,15 @@ public class playerCheckpoints : MonoBehaviour
     public Transform cp1Transform;
     public Transform cp2Transform;
     public Transform cp3Transform;
-    public int currentCP;
+    public int currentCP = 1;
     public bool player_failed;
     private Transform playerTransform;
+    private NavMeshAgent agent;
     void Start()
     {
         player_failed = false;
         currentCP = 1;
+        agent = gameObject.GetComponent<NPCPathfinding>().agent;
         playerTransform = GetComponent<Transform>();
     }
 
@@ -25,10 +28,16 @@ public class playerCheckpoints : MonoBehaviour
     }
 
     private void checkPlayerPosition(){
-        if(playerTransform.position.x == cp2Transform.position.x && playerTransform.position.z == cp2Transform.position.z){
+        if((playerTransform.position.x <= cp2Transform.position.x+1 && playerTransform.position.x >= cp2Transform.position.x-1) 
+        && (playerTransform.position.z <= cp2Transform.position.z+1 && playerTransform.position.z >= cp2Transform.position.z-1) ){
+            UnityEngine.Debug.Log("CP2 activated");  
+            
             currentCP = 2;
         }
-        else if(playerTransform.position.x == cp3Transform.position.x && playerTransform.position.z == cp3Transform.position.z){
+        else if((playerTransform.position.x <= cp3Transform.position.x+1 && playerTransform.position.x >= cp3Transform.position.x-1) 
+        && (playerTransform.position.z <= cp3Transform.position.z+1 && playerTransform.position.z >= cp3Transform.position.z-1) ){
+            UnityEngine.Debug.Log("CP3 activated");  
+
             currentCP = 3;
         }
     }

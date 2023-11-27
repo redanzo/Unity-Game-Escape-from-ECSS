@@ -9,8 +9,10 @@ public class NPCPathfinding : MonoBehaviour
 
     void Update()
     {
+
         Transform playerTransform = gameObject.GetComponent<Transform>();
         // add conditions to start pathfinding (player completes puzzle and walks over certain position)
         agent.SetDestination(playerTransform.position);
+        
     }
 }
