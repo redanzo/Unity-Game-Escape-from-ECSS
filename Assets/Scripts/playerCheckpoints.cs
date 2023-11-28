@@ -10,12 +10,13 @@ public class playerCheckpoints : MonoBehaviour
     public Transform cp2Transform;
     public Transform cp3Transform;
     public int currentCP = 1;
-    public bool player_failed;
     private Transform playerTransform;
     private NavMeshAgent agent;
+    public int numIncorrectAnswers = 0; 
+    public PlayerCam playerCamera;
+    
     void Start()
     {
-        player_failed = false;
         currentCP = 1;
         agent = gameObject.GetComponent<NPCPathfinding>().agent;
         playerTransform = GetComponent<Transform>();
@@ -24,7 +25,6 @@ public class playerCheckpoints : MonoBehaviour
     void Update()
     {
         checkPlayerPosition();
-        resetPlayer();
     }
 
     private void checkPlayerPosition(){
@@ -42,24 +42,44 @@ public class playerCheckpoints : MonoBehaviour
         }
     }
 
-    private void resetPlayer(){
-        if(player_failed)
-        {
+    
+
+    public void resetPlayer(GameObject panel1){
+        if(numIncorrectAnswers > 1){
+            // TODO reset only to CP1
             switch (currentCP)
             {
                 case 1:
                     playerTransform.transform.position = new Vector3(cp1Transform.position.x, cp1Transform.position.y, cp1Transform.position.z);
-                    player_failed = false;
                     break;
                 case 2:
                     playerTransform.transform.position = new Vector3(cp2Transform.position.x, cp2Transform.position.y, cp2Transform.position.z);
-                    player_failed = false;
                     break;
                 case 3:
                     playerTransform.transform.position = new Vector3(cp3Transform.position.x, cp3Transform.position.y, cp3Transform.position.z);
-                    player_failed = false;
                     break;
             }
+            numIncorrectAnswers = 0;
+            playerCamera.isCameraActive = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            panel1.SetActive(false);
+            
         }
+    }
+
+    public void resetPlayer2(){
+        switch (currentCP)
+            {
+                case 1:
+                    playerTransform.transform.position = new Vector3(cp1Transform.position.x, cp1Transform.position.y, cp1Transform.position.z);
+                    break;
+                case 2:
+                    playerTransform.transform.position = new Vector3(cp2Transform.position.x, cp2Transform.position.y, cp2Transform.position.z);
+                    break;
+                case 3:
+                    playerTransform.transform.position = new Vector3(cp3Transform.position.x, cp3Transform.position.y, cp3Transform.position.z);
+                    break;
+            }
     }
 }

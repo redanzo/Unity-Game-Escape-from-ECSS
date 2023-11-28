@@ -11,7 +11,7 @@ public class NPCPathfinding : MonoBehaviour
     {
 
         Transform playerTransform = gameObject.GetComponent<Transform>();
-        // add conditions to start pathfinding (player completes puzzle and walks over certain position)
+        // agent Temoc constantly tracks the player transform
         agent.SetDestination(playerTransform.position);
         
     }
